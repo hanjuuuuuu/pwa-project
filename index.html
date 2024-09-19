@@ -12,7 +12,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.json" />
-    <title>Vite project</title>
+    <title>Vite-project</title>
   </head>
   <body>
     <div id="root"></div>
@@ -21,7 +21,8 @@
       if ("serviceWorker" in navigator) {
         // Register a service worker hosted at the root of the
         // site using the default scope.
-        window.addEventListener('load', () => {
+        
+        //window.addEventListener('load', () => {
           navigator.serviceWorker
             .register("/service-worker.js")
             .then((registration) => {
@@ -30,7 +31,7 @@
             .catch((err) => {
               console.log("Service worker registration failed:", error);
             });
-        })
+        //})
       } else {
           console.log("Service workers are not supported.");
       }
