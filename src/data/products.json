@@ -1,0 +1,19 @@
+{
+    "productsData" : [
+        {"id": 1, "name": "고당도사과 1.5kg (5~6입)", "price": 22900, "image": "product1.jpg"},
+        {"id": 2, "name": "급냉 삼겹살 600g (냉동)", "price": 16990, "image": "product2.jpg"},
+        {"id": 3, "name": "춘천 국물 닭갈비 떡볶이", "price": 13500, "image": "product3.jpeg"},
+        {"id": 4, "name": "뉴질랜드 골드키위 1.1kg (8~10입) (후숙필요)", "price": 13900, "image": "product4.jpg"},
+        {"id": 5, "name": "짬뽕 2인분 (맵기선택)", "price": 13800, "image": "product5jpg"},
+        {"id": 6, "name": "가을 제철 수산물 6중 (택1)", "price": 9500, "image": "product6.jpg"},
+        {"id": 7, "name": "한통 양배추", "price": 4490, "image": "product7.jpeg"},
+        {"id": 8, "name": "돌돌말이 대패삼겹살 1kg(냉동)", "price": 16990, "image": "product8.jpg"},
+        {"id": 9, "name": "호주산 목초육 치마살 구이용 300g (냉장)", "price": 16950, "image": "product9.jpeg"},
+        {"id": 10, "name": "낙지 볶음 2종 (택1)", "price": 9900, "image": "product10.jpg"},
+        {"id": 11, "name": "유바리멜론 스팀 케이크", "price": 13900, "image": "product11.jpg"},
+        {"id": 12, "name": "새우 봉골레 파스타", "price": 9300, "image": "product12.jpg"},
+        {"id": 13, "name": "흙대파 1단 850g", "price": 3690, "image": "product13.jpg"},
+        {"id": 14, "name": "에어프라이어용 생선까스 (냉동)", "price": 13000, "image": "product14.jpg"},
+        {"id": 15, "name": "간편한 국물요리 7종", "price": 9900, "image": "product15.jpg"}
+    ]
+}
