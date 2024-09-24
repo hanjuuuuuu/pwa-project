@@ -1,51 +1,42 @@
-import React, { useState } from 'react'
-import ProductList from './components/ProductList'
-import Cart from './components/Cart'
-import { Product } from './vite-env'
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCartStore } from "./store/store";
+import { Product as ProductType } from "./vite-env";
+import productsData from "./data/products.json";
 
-const initialProducts: Product[] = [
-  { id: 1, name: '커피', price: 3000, quantity: 1},
-  { id: 2, name: '물', price: 2000, quantity: 1},
-  { id: 3, name: '콜라', price: 2000, quantity: 1},
-];
+const App = () => {
+  const navigate = useNavigate();
+  const { addToCart } = useCartStore();
 
+  const [products, setProducts] = useState<ProductType[]>([]);
 
-const App: React.FC = () => {
-  const [products] = useState<Product[]>(initialProducts);
-  const [cart, setCart] = useState<Product[]>([]);
+  useEffect(() => {
+    setProducts(productsData);
+  }, []);
 
-  const addToCart = (product: Product) => {
-    const existingProduct = cart.find((item) => item.id === product.id);
-    if(existingProduct){
-      setCart(
-        cart.map((item)=>
-          item.id === product.id ? {...item, quantity: item.quantity + 1}: item
-        )
-      );
-    } else {
-      setCart([...cart, {...product, quantity: 1}]);
-    }
-  };
-
-  const removeFromCart = (productId: number) => {
-    setCart(cart.filter((item) => item.id !== productId));
+  const handleAddToCart = (product: ProductType) => {
+    addToCart(product);
   }
 
-  const updateQuantity = (productId: number, quantity: number) => {
-    setCart(
-      cart.map((item) => 
-        item.id === productId ? {...item, quantity} : item
-      )
-    );
-  };
+  const goToCart = () =>{
+    navigate('/cart');
+  }
 
   return (
     <div>
-      <h2>장바구니</h2>
-      <ProductList products={products} addToCart={addToCart} />
-      <Cart cartItems={cart} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
+      <h2>상품 목록</h2>
+      <button onClick={()=> goToCart()}>장바구니로 이동</button>
+      <div style={{ display: 'flex', flexWrap: 'wrap'}}>
+        {products.map((product) => (
+          <div key={product.id} style={{ margin: '20px' }}>
+            <img src={`/images/${product.image}`} alt={product.name} style={{ width: '200px' }}/>
+            <h3>{product.name}</h3>
+            <button onClick={() => handleAddToCart(product)}>장바구니 담기</button>
+          </div>
+        ))}
+      </div>
     </div>
-  );
+  )
 };
 
 export default App;
