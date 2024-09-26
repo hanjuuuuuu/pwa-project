@@ -9,6 +9,10 @@ const Cart = () => {
     const goBackHome = () => {
         navigate('/');
     }
+
+    const getImagePath = (imageName: string) => {
+        return new URL(`../assets/${imageName}`, import.meta.url).href;
+    };
     
     return (
         <div>
@@ -19,8 +23,8 @@ const Cart = () => {
                 <ul>
                     {cartItems.map((item) => (
                         <li key={item.id}>
-                            <img src={item.image} alt={item.name} style={{ width: '100px' }}/>
-                            {item.name} - {item.price.toLocaleString()}원
+                            <img src={getImagePath(item.image)} alt={item.name} style={{ width: '100px', height: '100px', marginRight: '10px' }}/>
+                            {item.name} : {item.price.toLocaleString()}원
                             <button onClick={() => removeFromCart(item.id)}>삭제</button>
                         </li>
                     ))}

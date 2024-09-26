@@ -27,16 +27,16 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>상품 목록</h2>
+    <div className="container mx-auto p-4">
+      <h2 className="text-2xl font-bold text-center mb-6">상품 목록</h2>
       <button onClick={()=> goToCart()}>장바구니로 이동</button>
-      <div style={{ display: 'flex', flexWrap: 'wrap'}}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <div key={product.id} style={{ margin: '20px' }}>
-            <img src={getImagePath(product.image)} alt={product.name} style={{ width: '200px' }}/>
+            <img src={getImagePath(product.image)} alt={product.name} className="w-full h-48 object-cover mb-4"/>
             <h3>{product.name}</h3>
-            <p>{product.price.toLocaleString()}원</p>
-            <button onClick={() => handleAddToCart(product)}>장바구니 담기</button>
+            <p className="text-lg text-gray-600">{product.price.toLocaleString()}원</p>
+            <button className="bg-green-500 text-white mt-4 py-2 px-4 rounded w-full hover:bg-green-600 transition" onClick={() => handleAddToCart(product)}>장바구니 담기</button>
           </div>
         ))}
       </div>
