@@ -1,8 +1,8 @@
 {
-    "name": "vite-pwa",
-    "short_name": "vite-pwa",
+    "name": "vite-pwa-cart",
+    "short_name": "cart",
     "start_url": "/",
-    "theme_color": "#485EEE",
+    "theme_color": "#48e6ee",
     "background_color": "#ffffff",
     "display": "fullscreen",
     "icons": [

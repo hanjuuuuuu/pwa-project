@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '../store/store';
 
@@ -16,7 +15,7 @@ const Cart = () => {
     
     return (
         <div>
-            <h2>장바구니</h2>
+            <h2 className='text-3xl font-bold text-center mb-5'>장바구니</h2>
             {cartItems.length === 0 ? (
                 <p>장바구니가 비어 있습니다</p>
             ): (
