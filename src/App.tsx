@@ -1,26 +1,35 @@
-
 import { useNavigate } from "react-router-dom";
-import productsData from "./data/products.json";
-import ProductList from "./components/ProductList";
-
 
 const App = () => {
   const navigate = useNavigate();
 
-  const goToCart = () =>{
+  const goToProductList = () => {
+    navigate('/productlist');
+  };
+
+  const goToCart = () => {
     navigate('/cart');
-  }
+  };
 
   return (
-    <div className="grid grid-cols-5 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <h2 className="text-3xl font-bold text-center mb-5">상품 목록</h2>
-      <button className="bg-white" 
-        onClick={()=> goToCart()}>
-        장바구니로 이동
+    <div className="flex flex-col items-center justify-center h-screen space-y-4">
+      <h1 className="text-4xl font-bold">Welcome to the Shop</h1>
+      <div className="space-x-4">
+        <button 
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" 
+          onClick={goToProductList}
+        >
+          상품 목록 보기
         </button>
-      <ProductList products={productsData}/>
+        <button 
+          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600" 
+          onClick={goToCart}
+        >
+          장바구니 보기
+        </button>
+      </div>
     </div>
-  )
+  );
 };
 
 export default App;

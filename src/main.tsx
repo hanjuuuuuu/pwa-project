@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart.tsx'
+import ProductList from './components/ProductList.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -11,7 +12,8 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="productlist" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
